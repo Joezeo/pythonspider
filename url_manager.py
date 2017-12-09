@@ -8,13 +8,13 @@ class UrlManager:
 
     def add_new_url(self, url):
         if url is None:
-            return None
+            return
         if url not in self.new_urls and url not in self.old_urls:
             self.new_urls.add(url)
 
     def add_new_urls(self, urls):
         if urls is None or len(urls) == 0:
-            return None
+            return
         for url in urls:
             self.add_new_url(url)
 

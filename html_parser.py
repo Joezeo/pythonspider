@@ -7,7 +7,9 @@ from urllib.parse import urljoin
 class HtmlParser:
     def _get_new_urls(self, page_url, soup):
         new_urls = set()
-        links = soup.find_all('a', href=re.compile(r"/item/"))
+        # <a target="_blank" href="/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7
+        #%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80">计算机程序设计语言</a>
+        links = soup.find_all('a', href=re.compile(r"/item/\^[A-Za-z0-9]+$"))
         for link in links:
             new_url = link['href']
             new_full_url = urljoin(page_url, new_url)

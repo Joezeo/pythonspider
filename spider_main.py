@@ -37,5 +37,8 @@ if __name__ == '__main__':
     root_url = 'https://baike.baidu.com/item/Python/407313?fr=aladdin'
     # root_url = 'https://baike.baidu.com/view/21087.htm'
     # root_url = 'https://baike.baidu.com/item/Python'
+    # root_url = 'https://www.baidu.com/link?url=xlXvYmL9Bqg6bu7VJajEuN2BSJpE\
+    # 8xtnliOg-vIMa52sbb747PCsEeBceTEPfL6c_Gz_hu3YfFLkgpSn_7zG4q&wd=&eqid=\
+    # b38119b10000e52d000000055a2ba2dc'
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)
