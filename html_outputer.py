@@ -12,9 +12,9 @@ class HtmlOutputer:
 
     def output(self):
         fout = open('output.html', 'w')
-        fout.write('<html>')
-        fout.write('<body>')
-        fout.write('<table>')
+        fout.write('<html>\n')
+        fout.write('<body>\n')
+        fout.write('<table>\n')
 
         for data in self.datas:
             fout.write('<tr>')
@@ -23,7 +23,7 @@ class HtmlOutputer:
             fout.write('<td>{}</td>'.format(data['summary'].encode('UTF-8')))
             fout.write('</tr>')
 
-        fout.write('</table>')
-        fout.write('</body>')
-        fout.write('</html>')
+        fout.write('\n</table>')
+        fout.write('\n</body>')
+        fout.write('\n</html>')
         fout.close()
