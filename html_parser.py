@@ -43,12 +43,12 @@ lemmaTitle-title").find('h1')
 
     def parse(self, page_url, html_cont):
         """Parser模块接口函数
-        调用模块的_get_new_urls和_get_new_data函数从当前url获得链接和数据
+        调用模块的_get_new_urls和_get_new_data函数从当前page_url获得链接和数据
         """
         if page_url is None or html_cont is None:
             return
 
-        soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='UTF-8')
+        soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='GB2312')
         new_urls = self._get_new_urls(page_url, soup)
         new_data = self._get_new_data(page_url, soup)
         return new_urls, new_data

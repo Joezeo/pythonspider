@@ -23,16 +23,16 @@ class HtmlOutputer:
         """outputer模块接口函数
         输出函数，将datas列表中的数据输出到列表中
         """
-        fout = open('..\\tmp\\output.html', 'w')
+        fout = open('F:\\workspace\\tmp\\output.html', 'w')
         fout.write('<html>\n')
         fout.write('<body>\n')
         fout.write('<table>\n')
 
         for data in self.datas:
             fout.write('<tr>')
-            fout.write('<td>{}</td>'.format(data['url'].encode('UTF-8')))
-            fout.write('<td>{}</td>'.format(data['title'].encode('UTF-8')))
-            fout.write('<td>{}</td>'.format(data['summary'].encode('UTF-8')))
+            fout.write('<td>%s</td>' % data['url'])
+            fout.write('<td>%s</td>' % data['title'].encode('utf-8'))
+            fout.write('<td>%s</td>' % data['summary'].encode('utf-8'))
             fout.write('</tr>')
 
         fout.write('\n</table>')
