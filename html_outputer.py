@@ -2,15 +2,27 @@
 
 
 class HtmlOutputer:
+    """Outputer模块
+    对从parser模块取得的数据，进行输出到html文件的处理
+    """
     def __init__(self):
+        """outputer初始化
+        建立一个存放数据的列表
+        """
         self.datas = []
 
     def collect_data(self, data):
+        """outputer模块接口函数
+        收集数据，并将其放入datas列表中
+        """
         if data is None:
             return
         self.datas.append(data)
 
     def output(self):
+        """outputer模块接口函数
+        输出函数，将datas列表中的数据输出到列表中
+        """
         fout = open('output.html', 'w')
         fout.write('<html>\n')
         fout.write('<body>\n')

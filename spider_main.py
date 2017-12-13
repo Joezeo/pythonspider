@@ -7,12 +7,18 @@ import html_outputer
 
 class SpiderMain:
     def __init__(self):
+        """初始化
+        建立四个模块的实例
+        """
         self.urls = url_manager.UrlManager()
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOutputer()
 
     def craw(self, root_url):
+        """爬虫程序的主函数
+        程序主逻辑函数
+        """
         count = 1
         self.urls.add_new_url(root_url)
 
@@ -34,11 +40,7 @@ class SpiderMain:
 
 
 if __name__ == '__main__':
+    # 根url，爬虫程序爬取网页的起点
     root_url = 'https://baike.baidu.com/item/Python/407313?fr=aladdin'
-    # root_url = 'https://baike.baidu.com/view/21087.htm'
-    # root_url = 'https://baike.baidu.com/item/Python'
-    # root_url = 'https://www.baidu.com/link?url=xlXvYmL9Bqg6bu7VJajEuN2BSJpE\
-    # 8xtnliOg-vIMa52sbb747PCsEeBceTEPfL6c_Gz_hu3YfFLkgpSn_7zG4q&wd=&eqid=\
-    # b38119b10000e52d000000055a2ba2dc'
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)
