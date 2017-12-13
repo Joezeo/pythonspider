@@ -23,7 +23,7 @@ class HtmlOutputer:
         """outputer模块接口函数
         输出函数，将datas列表中的数据输出到列表中
         """
-        fout = open('output.html', 'w')
+        fout = open('..\\tmp\\output.html', 'w')
         fout.write('<html>\n')
         fout.write('<body>\n')
         fout.write('<table>\n')
