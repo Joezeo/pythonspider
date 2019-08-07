@@ -41,6 +41,6 @@ class SpiderMain:
 
 if __name__ == '__main__':
     # 根url，爬虫程序爬取网页的起点
-    root_url = 'https://baike.baidu.com/item/Python/407313?fr=aladdin'
+    root_url = input('请输入你要爬取的起始url -->')
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)
